@@ -3,10 +3,17 @@ import NumberType from "./components/NumberType.vue";
 import Code from "./components/Code.vue";
 import Array from "./components/Array.vue";
 import ObjectType from "./components/ObjectType.vue";
+import { toggleDark, isDark } from "./composables/dark";
 </script>
 
 <template>
   <div class="row">
+    isDark {{ isDark }}
+    <button @click="toggleDark()">
+      <i inline-block align-middle i="dark:carbon-moon carbon-sun" />
+
+      <span class="ml-2">{{ isDark ? "Dark" : "Light" }}</span>
+    </button>
     <div class="col-12"><NumberType /></div>
     <div class="col-12"><Code /></div>
     <div class="col-12"><Array /></div>
@@ -14,17 +21,9 @@ import ObjectType from "./components/ObjectType.vue";
   </div>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+<style>
+.dark {
+  background: #16171d;
+  color: #fff;
 }
 </style>
