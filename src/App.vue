@@ -3,7 +3,8 @@ import NumberType from "./components/NumberType.vue";
 import Code from "./components/Code.vue";
 import Array from "./components/Array.vue";
 import ObjectType from "./components/ObjectType.vue";
-import { toggleDark, isDark } from "./composables/dark";
+
+const { x, y } = useMouse();
 </script>
 
 <template>
@@ -18,6 +19,8 @@ import { toggleDark, isDark } from "./composables/dark";
     <div class="col-12"><Code /></div>
     <div class="col-12"><Array /></div>
     <div class="col-12"><ObjectType /></div>
+
+    Mouse position is at: {{ x }}, {{ y }}
   </div>
 </template>
 
